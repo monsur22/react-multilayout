@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+// import MainLayout from './layouts/main_layouts.js';
+// import EmptyLayout from './layouts/empty_layouts.js';
+// import Home from './pages/home.js';
+// import About from './pages/about.js';
+// import SignIn from './pages/sign-in.js';
+// import NotFound from './pages/not-found.js';
 
+import Login from "./Login";
+import Main from "./Main";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     {/* <Routes >
+      <Route  element={<MainLayout/>}>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
+      </Route>
+      <Route element={<EmptyLayout/>}>
+        <Route path="/sign-in" element={<SignIn/>} />
+      </Route>
+      <Route path="*" element={<NotFound/>}/>
+    </Routes> */}
+     <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/main/*" element={<Main />} />
+        </Routes>
+      </Router>
     </div>
+
   );
 }
 
 export default App;
+/// https://stackoverflow.com/questions/69988285/nested-routing-in-react-router-dom-v6
