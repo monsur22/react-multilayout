@@ -12,6 +12,8 @@ import {
 
 import Login from "./Login";
 import Main from "./Main";
+import MainLayout from './layouts/main_layouts.js';
+import EmptyLayout from './layouts/empty_layouts.js';
 function App() {
   return (
     <div>
@@ -29,6 +31,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/main/*" element={<Main />} />
+          <Route path="/main-layout/*" element={<MainLayout />} />
+          <Route path="/empty-layout/*" element={<EmptyLayout />} />
         </Routes>
       </Router>
     </div>
